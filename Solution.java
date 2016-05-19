@@ -29,14 +29,17 @@ public class Solution {
         /*
          * Create the sample input to the run the program against.
          */
-        List<String> inputData = new ArrayList<>();
-        inputData.add(input[0]);
-        for(String x : input[1].split(",")) {
-            inputData.add(x);
+        if(input.length > 1) {
+            List<String> inputData = new ArrayList<>();
+            inputData.add(input[0]);
+            for(String x : input[1].split(",")) {
+                inputData.add(x);
+            }
+            String finalResponse = checkValidity(inputData, dataStore);
+            System.out.print(finalResponse);
+        } else {
+            System.out.print("fail");
         }
-
-        String finalResponse = checkValidity(inputData, dataStore);
-        System.out.print(finalResponse);
     }
 
     /*
